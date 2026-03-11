@@ -30,19 +30,27 @@ if($r=="robotica") $robotica++;
 }
 
 if($design >= $logica && $design >= $games && $design >= $robotica){
-$perfil=" Mestre do Design";
+$perfil="Mestre do Design";
+$img = "img/designer.png";
 }
 
 elseif($logica >= $design && $logica >= $games && $logica >= $robotica){
-$perfil=" Hacker da Lógica";
+$perfil="Hacker da Lógica";
+$img = "img/hacker.png";
+}
+elseif($games >= $design && $games >= $logica && $games >= $robotica){
+$perfil="Criador de Games";
+$img = "img/jogo.png";
 }
 
-elseif($games >= $design && $games >= $logica && $games >= $robotica){
-$perfil=" Criador de Games";
+elseif($robotica >= $design && $robotica >= $logica && $robotica >= $games){
+$perfil="Engenheiro de Robótica";
+$img = "img/robotica.png";
+
 }
 
 else{
-$perfil=" Explorador da Tecnologia";
+$perfil="Explorador da Tecnologia";
 }
 
 setcookie("jogador",$nome,time()+3600);
@@ -53,21 +61,23 @@ setcookie("jogador",$nome,time()+3600);
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="style.css">
+
 <title>Resultado</title>
+<link rel="stylesheet" href="style1.css">
 </head>
 
 <body>
-
+<div class="quiz">
 <h1>Resultado do Quiz</h1>
 
 <p>Jogador: <?php echo $nome; ?></p>
 
 <h2>Seu perfil é: <?php echo $perfil; ?></h2>
+<img src="<?php echo $img; ?>" alt="Resultado">
 
-<a href="index.php">
-<button>Jogar novamente</button>
+
+<a href="index.php" class="btn">Jogar novamente</a>
 </a>
-
+</div>
 </body>
 </html>
