@@ -1,22 +1,29 @@
+<?php
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style1.css">
-    <title>Document</title>
+<meta charset="UTF-8">
+<title>Qual é o seu Perfil Geek?</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="card">
-    <h1>Qual é o seu Perfil Geek?</h1>
+<h1>Qual é o seu Perfil Geek?</h1>
 
-    <p>Responda às perguntas para descobrir qual é o seu perfil no mundo da 
-        tecnologia!
-    </p>
+<?php
+if(isset($_COOKIE['jogador'])){
+    echo "<p>Bem-vindo de volta, ".$_COOKIE['jogador']."!</p>";
+}
+?>
 
-    <button> <a href="quiz.php">Iniciar Questionário</a> </button>
+<p>Responda o quiz e descubra qual é a sua verdadeira identidade no mundo da tecnologia.</p>
 
-</div>
+<a href="quiz.php">
+<button>Começar Quiz</button>
+</a>
+
 </body>
 </html>
