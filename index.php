@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+<div class="inicio">
 <h1>Qual é o seu Perfil Geek?</h1>
 
 <?php
@@ -24,6 +24,6 @@ if(isset($_COOKIE['jogador'])){
 <a href="quiz.php">
 <button>Começar Quiz</button>
 </a>
-
+</div>
 </body>
 </html>
